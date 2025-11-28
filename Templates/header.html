@@ -1,0 +1,54 @@
+{%load static%}
+
+
+
+<header id="header" class="header d-flex align-items-center position-relative">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+     
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="{% static 'assets/img/logo.png' %}" alt="AgriCulture">
+        <!-- <h1 class="sitename">AgriCulture</h1>  -->
+      </a>
+      
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{% url 'myapp:index' %}" >Home</a></li>
+          <li><a href="{% url 'myapp:about' %}">About</a></li>
+          <li><a href="{% url 'myapp:service' %}">Our Services</a></li>
+          <li><a href="{% url 'myapp:testimonial' %}">Testimonials</a></li>
+          
+          <li><a href="{% url 'myapp:appointment' %}">Appointment</a></li>
+          <li><a href="{% url 'myapp:show_appointments' %}"> Show Appointments</a></li>
+          <li><a href="{% url 'myapp:marketplace' %}"> Post Products</a></li>
+          <li><a href="{% url 'myapp:my_products' %}" class="nav-link">My Products</a></li>
+          <li><a href="{% url 'myapp:products_list' %}" class="nav-link">All Products</a></li>
+
+        </ul> 
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+
+        <div class="social-links d-none d-md-flex align-items-center">
+          <nav>
+            {% if user.is_authenticated %}
+                <form method="POST" action="{% url 'accounts:logout' %}">
+                    {% csrf_token %}
+                    <a href="#" class="logout-link" onclick="this.closest('form').submit();">Log Out</a>
+                </form>
+            {% else %}
+          <a href="{% url 'accounts:signup' %}" class="btn btn-success btn-sm me-2">Sign Up</a>
+        <a href="{% url 'accounts:login' %}" class="btn btn-outline-success btn-sm">Sign In</a>
+
+            {% endif %}
+          </nav>
+          
+    
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+   
+      </div>
+
+    </div>
+  </header>

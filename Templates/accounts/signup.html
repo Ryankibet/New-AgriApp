@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %} Register {% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'assets/css/auth.css' %}">
+
+<div class="auth-container signup">
+  <div class="auth-card">
+    <h2>Create Account</h2>
+
+
+    <form method="POST" action="{% url 'accounts:signup' %}" class="auth-form">
+      {% csrf_token %}
+      <label>Username</label>
+      <input type="text" name="username" required>
+
+      <label>Email</label>
+      <input type="email" name="email" required>
+
+      <label>Phone</label>
+      <input type="text" name="phone" required>
+
+      <label>Password</label>
+      <input type="password" name="password" required>
+
+      <label>Confirm Password</label>
+      <input type="password" name="confirm_password" required>
+
+      <button type="submit" class="auth-btn">Sign Up</button>
+    </form>
+
+    <div class="auth-footer">
+      Already have an account? <a href="{% url 'accounts:login' %}">Sign In</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

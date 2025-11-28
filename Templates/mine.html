@@ -1,0 +1,104 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Team{% endblock %}
+{% block content %}
+
+<section class="team-section py-5" style="background-color: #f9fff8;">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 style="font-weight: 700; color: #2e7d32;">Meet Our Team</h2>
+      <p style="color: #555;">Dedicated professionals working to make agriculture smarter</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <!-- Team Member 1 -->
+      <div class="col-md-4 mb-4" data-aos="zoom-in">
+        <div class="card shadow-sm border-0 text-center p-4 team-card h-100">
+          <img src="{% static 'Static/assets/img/ryan.jpg' %}" class="rounded-circle mx-auto mb-3" alt="Ryan Kibet" width="130" height="130">
+          <h5 class="fw-bold">Ryan Kibet</h5>
+          <p class="text-success fw-semibold">Founder & CEO</p>
+          <p>Leading innovation in smart farming.</p>
+        </div>
+      </div>
+
+      <!-- Team Member 2 -->
+      <div class="col-md-4 mb-4" data-aos="zoom-in">
+        <div class="card shadow-sm border-0 text-center p-4 team-card h-100">
+          <img src="{% static 'Static/assets/img/faith.jpg' %}" class="rounded-circle mx-auto mb-3" alt="Faith Chepkemoi" width="130" height="130">
+          <h5 class="fw-bold">Faith Chepkemoi</h5>
+          <p class="text-success fw-semibold">Head of Operations</p>
+          <p>Ensuring seamless functionality.</p>
+        </div>
+      </div>
+
+      <!-- Team Member 3 -->
+      <div class="col-md-4 mb-4" data-aos="zoom-in">
+        <div class="card shadow-sm border-0 text-center p-4 team-card h-100">
+          <img src="{% static 'Static/assets/img/openda.jpg' %}" class="rounded-circle mx-auto mb-3" alt="Openda Oluoch" width="130" height="130">
+          <h5 class="fw-bold">Openda Oluoch</h5>
+          <p class="text-success fw-semibold">Software Engineer</p>
+          <p>Building robust solutions for farmers.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Row -->
+    <div class="row justify-content-center">
+      <!-- Team Member 4 -->
+      <div class="col-md-4 mb-4" data-aos="zoom-in">
+        <div class="card shadow-sm border-0 text-center p-4 team-card h-100">
+          <img src="{% static 'Static/assets/img/michael.jpg' %}" class="rounded-circle mx-auto mb-3" alt="Michael Kiplimo" width="130" height="130">
+          <h5 class="fw-bold">Michael Kiplimo</h5>
+          <p class="text-success fw-semibold">Agriculture Specialist</p>
+          <p>Connecting tech with farming needs.</p>
+        </div>
+      </div>
+
+      <!-- Team Member 5 -->
+      <div class="col-md-4 mb-4" data-aos="zoom-in">
+        <div class="card shadow-sm border-0 text-center p-4 team-card h-100">
+          <img src="{% static 'Static/assets/img/mitchelle.jpg' %}" class="rounded-circle mx-auto mb-3" alt="Mitchelle Nyambura" width="130" height="130">
+          <h5 class="fw-bold">Mitchelle Nyambura</h5>
+          <p class="text-success fw-semibold">Agronomist Consultant</p>
+          <p>Providing expertise on crop management and sustainable practices.</p>
+        </div>
+      </div>
+
+      <!-- Team Member 6 -->
+      <div class="col-md-4 mb-4" data-aos="zoom-in">
+        <div class="card shadow-sm border-0 text-center p-4 team-card h-100">
+          <img src="{% static 'Static/assets/img/joshua.jpg' %}" class="rounded-circle mx-auto mb-3" alt="Joshua Ochari" width="130" height="130">
+          <h5 class="fw-bold">Joshua Ochari</h5>
+          <p class="text-success fw-semibold">Customer Success Manager</p>
+          <p>Building strong relationships with farmers and users to ensure satisfaction.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .team-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    border-radius: 12px;
+  }
+
+  .team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  }
+
+  .team-card img {
+    border: 3px solid #2e7d32;
+  }
+
+  @media (max-width: 768px) {
+    .team-card img {
+      width: 110px;
+      height: 110px;
+    }
+  }
+</style>
+
+{% endblock %}

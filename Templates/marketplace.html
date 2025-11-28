@@ -1,0 +1,168 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Marketplace{% endblock %}
+{% block content %}
+
+<style>
+  section.marketplace {
+    background: #f8f9fa;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+  }
+
+  .product-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+  }
+
+  .product-card h5 {
+    font-size: 1rem;
+    color: #198754;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .product-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 2px 0;
+  }
+
+  .product-card .price {
+    font-weight: bold;
+    color: #000;
+    background: #e6f4ea;
+    padding: 5px 0;
+    margin-top: 8px;
+  }
+
+  .contact-info {
+    font-size: 0.9rem;
+    background: #f1f9f2;
+    padding: 8px;
+    border-top: 1px solid #e0e0e0;
+    color: #2f855a;
+  }
+
+  .contact-info a {
+    text-decoration: none;
+    color: #2f855a;
+    font-weight: 500;
+  }
+
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+
+  .add-product-form {
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  }
+</style>
+
+<section class="marketplace py-5">
+  <div class="container">
+    <div class="section-title text-center mb-5">
+      <h2 class="fw-bold text-success">Sell Your Farm Products</h2>
+      <p class="text-muted">Advertise your produce directly to buyers — fast, easy, by paying ksh 50 per product</p>
+    </div>
+
+    <!-- Product Submission Form -->
+    <div class="add-product-form mb-5">
+      <h4 class="mb-3 text-success">Add a New Product</h4>
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Product Name</label>
+            <input type="text" name="name" class="form-control" placeholder="e.g. Fresh Tomatoes" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Category</label>
+            <select name="category" class="form-select" required>
+              <option value="">Select category</option>
+              <option>Fruits</option>
+              <option>Vegetables</option>
+              <option>Cereals</option>
+              <option>Dairy</option>
+              <option>Livestock</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Price (KSh)</label>
+            <input type="number" name="price" class="form-control" placeholder="e.g. 200" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Product Image</label>
+            <input type="file" name="image" class="form-control" accept="image/*" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Contact Info</label>
+            <input type="text" name="contact" class="form-control" placeholder="e.g. 0712345678 or email@example.com" required>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Short Description</label>
+            <textarea name="description" class="form-control" rows="3" placeholder="Describe your product..." required></textarea>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-success px-4 py-2">Post Product</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Product Grid Display -->
+    <div class="product-grid">
+      {% for product in products %}
+      <div class="product-card">
+        {% if product.image %}
+          <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        {% else %}
+          <img src="{% static 'img/no-image.jpg' %}" alt="No Image">
+        {% endif %}
+        <h5>{{ product.name }}</h5>
+        <p class="text-muted">{{ product.category }}</p>
+        <p class="price">KSh {{ product.price }}</p>
+        <div class="contact-info">
+          <strong>Contact:</strong>
+          {% if product.contact %}
+            <a href="https://wa.me/{{ product.contact|cut:'+' }}" target="_blank">
+              {{ product.contact }}
+            </a>
+          {% else %}
+            <span>Not provided</span>
+          {% endif %}
+        </div>
+      </div>
+      {% empty %}
+      <p class="text-center text-muted">No products posted yet. Be the first to advertise!</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

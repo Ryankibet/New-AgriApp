@@ -1,0 +1,89 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Testimonials{% endblock %}
+{% block content %}
+
+<section class="testimonials-section py-5">
+  <div class="container">
+    <div class="section-title text-center mb-5" data-aos="fade-up">
+      <h2 class="fw-bold text-success">What Our Farmers Say</h2>
+      <p class="text-muted">Real stories from farmers empowered by our platform</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Testimonial 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial-card p-4 shadow-lg rounded text-center bg-light h-100">
+          <img src="{% static 'Static/assets/img/IMG-20241127-WA0009.jpg' %}"
+               alt="Testimonial author" class="rounded-circle mb-3" width="120" height="120">
+          <blockquote class="fst-italic text-secondary">
+            "This app has transformed the way I manage my farm. The crop advice made planning my planting and harvesting much easier, leading to a more successful harvest."
+          </blockquote>
+          <p class="client-name fw-semibold mt-3 text-success">— Okunga Michael</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial-card p-4 shadow-lg rounded text-center bg-light h-100">
+          <img src="{% static 'Static/assets/img/IMG-20241127-WA0010.jpg' %}"
+               alt="Testimonial author" class="rounded-circle mb-3" width="120" height="120">
+          <blockquote class="fst-italic text-secondary">
+            "As a smallholder, I've struggled to stay updated on market prices. This app gives me real-time information, allowing me to sell my produce at better rates."
+          </blockquote>
+          <p class="client-name fw-semibold mt-3 text-success">— Wafula Birure</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial-card p-4 shadow-lg rounded text-center bg-light h-100">
+          <img src="{% static 'Static/assets/img/IMG-20241127-WA0012.jpg' %}"
+               alt="Testimonial author" class="rounded-circle mb-3" width="120" height="120">
+          <blockquote class="fst-italic text-secondary">
+            "The market insights ensure I sell my vegetables at the best prices. It's like having a farming assistant in my pocket. My farm is thriving!"
+          </blockquote>
+          <p class="client-name fw-semibold mt-3 text-success">— Betty Chepkirui</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 4 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial-card p-4 shadow-lg rounded text-center bg-light h-100">
+          <img src="{% static 'Static/assets/img/IMG-20241127-WA0008.jpg' %}"
+               alt="Testimonial author" class="rounded-circle mb-3" width="120" height="120">
+          <blockquote class="fst-italic text-secondary">
+            "The pest detection feature saved me so much time and money. The app quickly identified the issue in my crops and helped me act fast."
+          </blockquote>
+          <p class="client-name fw-semibold mt-3 text-success">— Muiga Dan</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 5 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial-card p-4 shadow-lg rounded text-center bg-light h-100">
+          <img src="{% static 'Static/assets/img/IMG-20241127-WA0011.jpg' %}"
+               alt="Testimonial author" class="rounded-circle mb-3" width="120" height="120">
+          <blockquote class="fst-italic text-secondary">
+            "Thanks to this app, I can now plan my crops according to weather forecasts and market trends. It’s like having a smart farm manager right in my hands."
+          </blockquote>
+          <p class="client-name fw-semibold mt-3 text-success">— Jameson Oduor</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 6 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial-card p-4 shadow-lg rounded text-center bg-light h-100">
+          <img src="{% static 'Static/assets/img/IMG-20241127-WA0013.jpg' %}"
+               alt="Testimonial author" class="rounded-circle mb-3" width="120" height="120">
+          <blockquote class="fst-italic text-secondary">
+            "This platform helped me connect directly with buyers and reduce my post-harvest losses. It’s reliable, simple, and perfect for modern farmers."
+          </blockquote>
+          <p class="client-name fw-semibold mt-3 text-success">— Mike Wachira</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

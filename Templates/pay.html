@@ -1,0 +1,87 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Make a Payment{% endblock %}
+{% block content %}
+
+<style>
+.payment-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-color: #f9fafb;
+}
+
+.payment-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+}
+
+.payment-card h2 {
+  color: #2d3748;
+  font-size: 26px;
+  margin-bottom: 25px;
+}
+
+.payment-card label {
+  display: block;
+  text-align: left;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #444;
+}
+
+.payment-card input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.payment-card input:focus {
+  border-color: #28a745;
+  outline: none;
+  box-shadow: 0 0 4px #28a74540;
+}
+
+.payment-card button {
+  width: 100%;
+  background-color: #28a745;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.payment-card button:hover {
+  background-color: #218838;
+}
+</style>
+
+<div class="payment-container">
+  <div class="payment-card">
+    <h2>Make a Payment</h2>
+    <form method="post" action="{% url 'myapp:stk' %}">
+      {% csrf_token %}
+      <label for="phone">Phone Number:</label>
+      <input type="number" id="phone" name="phone" value="254" placeholder="Enter phone number" required>
+
+      <label for="amount">Amount:</label>
+      <input type="text" id="amount" name="amount" placeholder="Enter amount" required>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,291 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            text-align: center;
+            background-color:white;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 15px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .team-card img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .team-card h3 {
+            margin: 15px 0 5px;
+            color: #333;
+        }
+
+        .team-card p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color:white;
+            color: rgb(18, 18, 18);
+        }
+        
+    </style>
+</head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>{% block title%}{% endblock%}</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" href="{% static 'Static\assets\css\login.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/appointment.css' %}">
+  <link rel="stylesheet" href="{% static 'Static\assets\css\register.css' %}">
+<link href="{% static 'Static\assets\img\sushobhan-badhai-LrPKL7jOldI-unsplash.jpg' %}" rel="icon">
+
+  <!-- Fonts  -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="{% static 'https://fonts.googleapis.com' %}" rel="preconnect">
+  <link href="{% static 'https://fonts.gstatic.com' %}" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Marcellus:wght@400&display=swap" rel="stylesheet">
+
+  <!-- <-- Vendor CSS Files --> 
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: AgriCulture
+  * Template URL: https://bootstrapmade.com/agriculture-bootstrap-website-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+{% include 'header.html' %}
+
+<!-- index.html -->
+
+{% if messages %}
+<div class="messages-container">
+    {% for message in messages %}
+        <div class="alert 
+            {% if message.tags == 'success' %}alert-success
+            {% elif message.tags == 'error' %}alert-danger
+            {% elif message.tags == 'warning' %}alert-warning
+            {% else %}alert-info{% endif %}">
+            {{ message }}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+  <main class="main">
+
+    {% block content %}
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
+
+        <div class="carousel-item active">
+          <img src="{% static 'Static\assets\img\IMG-20241127-WA0003.jpg' %}" alt="">
+          <div class="carousel-container">
+            <h2>Farming is the best solution of worlds starvation</h2>
+            <p>agriculture plays a fundamental role in sustaining human life and the global population. It highlights how farming is essential for
+            producing the food that people eat every day.</p>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="{% static 'Static\assets\img\image.png' %}" alt="">
+          <div class="carousel-container">
+            <h2>A farmer's work is rooted in hope and harvest</h2>
+            <p> farmers put in hard work with the hope of a successful harvest, even in the face of uncertainties like weather, pests, 
+              or market conditions.</p>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="{% static 'Static\assets\img\IMG-20241127-WA0005.jpg' %}" alt="">
+          <div class="carousel-container">
+            <h2>Providing Fresh Produce Every Single Day</h2>
+            <p>Providing fresh produce daily ensures health, sustainability, and community connection, making it a fulfilling and impactful endeavor.</p>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="{% static 'Static\assets\img\imager.png' %}" alt="">
+          <div class="carousel-container">
+            <h2>Farming as a Passion</h2>
+            <p>Farming allows you to work in harmony with the environment, experiencing the satisfaction of growing food and sustaining ecosystems.</p>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="{% static 'Static\assets\img\IMG-20241127-WA0007.jpg' %}" alt="">
+          <div class="carousel-container">
+            <h2>Good Food For All</h2>
+            <p>ensures everyone has access to fresh, nutritious, and sustainably produced meals that nourish both people and the planet.</p>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+        <ol class="carousel-indicators"></ol>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+  {% endblock %}
+  </main>
+
+ {% include 'footer.html' %}
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+  <!-- Main JS Filstatic e -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+  <script>
+  setTimeout(function() {
+    const alerts = document.querySelectorAll('.alert');
+    alerts.forEach(alert => {
+      alert.style.opacity = '0';
+      setTimeout(() => alert.remove(), 600);
+    });
+  }, 4000); // disappears after 4 seconds
+</script>
+
+<script>
+async function sendMessage() {
+  const input = document.getElementById("chat-input");
+  const message = input.value.trim();
+  if (!message) return;
+
+  const chatBox = document.getElementById("chat-box");
+  chatBox.innerHTML += `<div class='user'>👨‍🌾 ${message}</div>`;
+  input.value = "";
+
+  const formData = new FormData();
+  formData.append("question", message);
+
+  try {
+    const res = await fetch("/consult-ai/", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await res.json();
+    chatBox.innerHTML += `<div class='ai' style="color:black; background:#f9f9f9; padding:8px 10px; border-radius:8px; display:inline-block; max-width:85%; margin:6px 0;">🤖 ${data.answer}</div>`;
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+  } catch (err) {
+    chatBox.innerHTML += `<div class='ai'>⚠️ Could not reach AI.</div>`;
+  }
+}
+</script>
+<style>
+#chat-box .ai {
+  color: #000 !important;
+  background: #f9f9f9 !important;
+  padding: 8px 10px !important;
+  border-radius: 8px !important;
+  display: inline-block !important;
+  max-width: 85% !important;
+  margin: 6px 0 !important;
+}
+#chat-box .user {
+  color: #fff !important;
+  background: #4CAF50 !important;
+  padding: 8px 10px !important;
+  border-radius: 8px !important;
+  display: inline-block !important;
+  max-width: 85% !important;
+  margin: 6px 0 !important;
+  align-self: flex-end;
+}
+#chat-box {
+  display: flex;
+  flex-direction: column;
+}
+</style>
+
+
+</body>
+
+</html>

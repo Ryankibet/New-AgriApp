@@ -1,0 +1,69 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Show Appointments{% endblock %}
+{% block content %}
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 15px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 7px;
+        text-align: left;
+    }
+    th {
+        background-color: #f4f4f4;
+        font-size: 13px;
+    }
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+    .btn {
+        padding: 6px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: white;
+        font-size: 13px;
+    }
+    .btn-primary { background-color: #007bff; }
+    .btn-danger { background-color: #dc3545; }
+    .btn-success { background-color: #28a745; }
+</style>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Message</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for appointment in appointments %}
+        <tr>
+            <td>{{ appointment.name }}</td>
+            <td>{{ appointment.email }}</td>
+            <td>{{ appointment.phone }}</td>
+            <td>{{ appointment.message }}</td>
+            <td>{{ appointment.date }}</td>
+            <td>
+                <a href="{% url 'myapp:update_appointment' appointment.id %}" class="btn btn-primary">Edit</a>
+                
+                <a href="{% url 'myapp:delete_appointment' appointment.id %}" 
+                   class="btn btn-danger"
+                   onclick="return confirm('Are you sure you want to delete this appointment? This action cannot be undone.');">
+                   Delete
+                </a>
+                
+                <a href="{% url 'myapp:pay' %}" class="btn btn-success">Pay</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

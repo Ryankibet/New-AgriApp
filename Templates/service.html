@@ -1,0 +1,120 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Services{% endblock %}
+{% block content %}
+
+<!-- 🌾 Services Section -->
+<section id="services" class="services section py-5">
+  <div class="container">
+    <!-- Section Title -->
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="fw-bold text-success">Our Services</h2>
+      <p class="text-muted">Affordable and reliable farming services to boost your productivity.</p>
+    </div>
+
+    <div class="row g-4">
+      {% comment %} Each service card {% endcomment %}
+      {% for service in services %}
+      {% endfor %}
+
+      <!-- Service 1 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card shadow-sm border-0 h-100 text-center p-4">
+          <div class="number bg-success text-white rounded-circle mx-auto mb-3" 
+               style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;">01</div>
+          <h5 class="text-success fw-bold">Planting</h5>
+          <p class="fw-semibold text-dark">PRICE: 4,500/= per acre</p>
+          <p class="text-muted">Planting sustains life, promotes biodiversity, and ensures food production.</p>
+          <a href="{% url 'myapp:pay' %}" class="btn btn-outline-success btn-sm mt-2">Pay Now</a>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card shadow-sm border-0 h-100 text-center p-4">
+          <div class="number bg-success text-white rounded-circle mx-auto mb-3" 
+               style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;">02</div>
+          <h5 class="text-success fw-bold">Mulching</h5>
+          <p class="fw-semibold text-dark">PRICE: 1,000/= per acre</p>
+          <p class="text-muted">Mulching promotes soil health and helps conserve moisture for better yields.</p>
+          <a href="{% url 'myapp:pay' %}" class="btn btn-outline-success btn-sm mt-2">Pay Now</a>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card shadow-sm border-0 h-100 text-center p-4">
+          <div class="number bg-success text-white rounded-circle mx-auto mb-3" 
+               style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;">03</div>
+          <h5 class="text-success fw-bold">Plowing</h5>
+          <p class="fw-semibold text-dark">PRICE: 3,500/= per acre</p>
+          <p class="text-muted">Plowing improves soil structure and helps control weeds and pests effectively.</p>
+          <a href="{% url 'myapp:pay' %}" class="btn btn-outline-success btn-sm mt-2">Pay Now</a>
+        </div>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card shadow-sm border-0 h-100 text-center p-4">
+          <div class="number bg-success text-white rounded-circle mx-auto mb-3" 
+               style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;">04</div>
+          <h5 class="text-success fw-bold">Mowing</h5>
+          <p class="fw-semibold text-dark">PRICE: 2,500/= per acre</p>
+          <p class="text-muted">Regular mowing improves appearance, controls pests, and promotes healthy growth.</p>
+          <a href="{% url 'myapp:pay' %}" class="btn btn-outline-success btn-sm mt-2">Pay Now</a>
+        </div>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card shadow-sm border-0 h-100 text-center p-4">
+          <div class="number bg-success text-white rounded-circle mx-auto mb-3" 
+               style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;">05</div>
+          <h5 class="text-success fw-bold">Seeding</h5>
+          <p class="fw-semibold text-dark">PRICE: 3,500/= per acre</p>
+          <p class="text-muted">Seeding ensures healthy crop growth and sets a strong foundation for harvest.</p>
+          <a href="{% url 'myapp:pay' %}" class="btn btn-outline-success btn-sm mt-2">Pay Now</a>
+        </div>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card shadow-sm border-0 h-100 text-center p-4">
+          <div class="number bg-success text-white rounded-circle mx-auto mb-3" 
+               style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;">06</div>
+          <h5 class="text-success fw-bold">Vegetable Pest Control</h5>
+          <p class="fw-semibold text-dark">PRICE: 1,000/= per acre</p>
+          <p class="text-muted">Eco-friendly pest control solutions to keep your crops healthy and safe.</p>
+          <a href="{% url 'myapp:pay' %}" class="btn btn-outline-success btn-sm mt-2">Pay Now</a>
+        </div>
+      </div>
+
+      <!-- Service 7 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card shadow-sm border-0 h-100 text-center p-4">
+          <div class="number bg-success text-white rounded-circle mx-auto mb-3" 
+               style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;">07</div>
+          <h5 class="text-success fw-bold">Watering</h5>
+          <p class="fw-semibold text-dark">PRICE: 1,500/= per acre</p>
+          <p class="text-muted">Keep your crops hydrated with efficient manual or automated irrigation systems.</p>
+          <a href="{% url 'myapp:pay' %}" class="btn btn-outline-success btn-sm mt-2">Pay Now</a>
+        </div>
+      </div>
+
+      <!-- Service 8 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card shadow-sm border-0 h-100 text-center p-4">
+          <div class="number bg-success text-white rounded-circle mx-auto mb-3" 
+               style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;">08</div>
+          <h5 class="text-success fw-bold">Vegetable Storage</h5>
+          <p class="fw-semibold text-dark">PRICE: 500/= per Kg</p>
+          <p class="text-muted">Preserve freshness with modern storage facilities for long-lasting quality produce.</p>
+          <a href="{% url 'myapp:pay' %}" class="btn btn-outline-success btn-sm mt-2">Pay Now</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}
